@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  backend:
+    build: ./
+    container_name: tech_container
+    working_dir: /tech_task
+    restart: always
+    command: uvicorn main:app --host 0.0.0.0
+
+    ports:
+      - "8010:8000"
+    volumes:
+      - ./src:/tech_task/src
